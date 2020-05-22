@@ -27,8 +27,12 @@ public class ProductController {
     }
 
     @GetMapping("/{id}")
-    public Product findById(@PathVariable final Long id) {
+    public Product findById(@PathVariable final Long id) throws Exception {
         final Product product = productService.findById(id);
+        if (product == null) {
+            throw new Exception("Product doesn't exist.");
+        }
+        //Thread.sleep(2000);
         product.setPort(port);
         return product;
     }

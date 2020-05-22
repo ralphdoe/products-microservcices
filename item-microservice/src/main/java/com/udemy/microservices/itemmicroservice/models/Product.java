@@ -9,6 +9,17 @@ public class Product {
     private Date createdAt;
     private Integer port;
 
+    public Product() {
+    }
+
+    public Product(Long id, String name, Double price, Date createdAt, Integer port) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.createdAt = createdAt;
+        this.port = port;
+    }
+
     public Long getId() {
         return id;
     }
